@@ -1,0 +1,19 @@
+<div class="container">
+  <h1>Deaf Grandma</h1>
+  <% if @grandma %>
+    <p>Grandma says: "<span id="grandma_says"><%= @grandma %></span>"</p>
+  <% end %>
+
+  <% if  @answer %>
+ <%= erb :_response %>
+ <% end %>
+
+  <form action="/grandma" method="post">
+    Say something to Grandma:
+    <br>
+    <span class="result"></span>
+    <input type="text" name="user_input">
+    <input type="submit" value="Say it!">
+  </form>
+</div>
+
